@@ -45,6 +45,4 @@ fn main() {
 
     fact.iter().for_each(|f| print!("{} ", f));
     println!("");
-
-
 }    
