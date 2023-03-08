@@ -13,7 +13,7 @@ fn find_next_palindrome(num: u32) -> u32 {
 
             }
         })
-        .collect::  <String>();
+        .collect::<String>();
         
     match zeros_at_middle.as_str() {
         "1111" => num - 1100,
@@ -26,9 +26,10 @@ fn find_next_palindrome(num: u32) -> u32 {
 
 
 fn solve() -> String {
-    // 999 * 998 = 998002 => 996699 is the biggest palindrome smaller than that
+    // Find the largest palindrome made from the product of two 3-digit numbers
+    // 999 * 998 = 997002 => 996699 is the biggest palindrome smaller than that
     let mut target: u32 = 996699;
-    // 100*100 = 10000 => smallest product of 3digit numbers
+    // 100*100 = 10000 => smallest product of 3-digit numbers
     while target >= 10000 {
         // divide with 3 digit numbers starting from 999 
         for divider in (100..=999).rev() {
