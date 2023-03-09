@@ -2,6 +2,7 @@ use primes::{Sieve, PrimeSet};
 use num_integer::{div_rem, Roots};
 use std::collections::{HashMap, HashSet};
 
+
 fn is_prime(n: u64) -> bool {
     if n <= 1 {
         return false
@@ -20,7 +21,7 @@ fn prime_factorization(mut num: u64) -> Vec<u64> {
     if num == 1 || is_prime(num) {
         return vec![num];
     }
-    
+
     let mut factorials = Vec::new();
     let mut prime_sieve = Sieve::new();
     let mut pset = prime_sieve.iter();
@@ -66,7 +67,6 @@ fn main() {
         prime_factorizations.push(prime_factorization(n.clone()));
     }
 
-
     // 2. 
     // collect maximum power of each prime number over all the factorizations 
     let mut powers_count: HashMap<u64, usize> = HashMap::new();
@@ -87,7 +87,6 @@ fn main() {
                 .or_insert(n_count(&pf, u));
         }
     }
-
 
     // 3. Product of the prime factors with the highest powers is the LCM 
     let mut lcm = 1;
