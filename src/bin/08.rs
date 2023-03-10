@@ -28,7 +28,7 @@ fn main() {
         .map(|window| {
             window
                 .iter()
-                // subtract 48 to convert from ascii to real integer
+                // subtract 48 to convert from ascii to actual integer value
                 .map(|n| (n - 48) as u64)
                 .product::<u64>() 
         })
